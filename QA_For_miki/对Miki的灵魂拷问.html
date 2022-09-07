@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>对Miki的灵魂拷问</title>
+    <link href="代码库/" rel="external nofollow" rel="shortcut icon" class="icon-love" type="images/x-ico">
+
+    <link rel="stylesheet" href="代码库/css/love.css" rel="external nofollow">
+    <script>
+        var Check_name = '';
+        var time = 0;
+
+        while (Check_name != '输入正确') {
+            var input_name = prompt('请问你知道我的名字吗？');
+            if (input_name == '赖建忠') {
+                if (time <= 1) {
+                    alert("算你聪明，不过这才第一题～");
+                }
+                if (time == 2) {
+                    alert("名字都想半天，哎～，看下一题吧。。");
+                }
+                if (time >= 3) {
+                    alert("你可终于蒙对了，看下一题吧。。");
+                }
+                Check_name = '输入正确';
+            }
+            else {
+                if (time == 0) {
+                    alert("还剩下 2 次机会，答不上来就说明咱俩没啥交情！哼！");
+                }
+                if (time == 1) {
+                    alert("还剩下 1 次机会，我怎么感觉咱应该不认识。。。");
+                }
+                if (time >= 2) {
+                    alert("陌生人，再给你亿次机会你也不可能对的。。。");
+                }
+
+                ++time;
+
+            }
+        }
+        var Check_Love = '';
+        while (Check_Love != '输入正确') {
+            var input_love = prompt('用力敲键盘告诉我你喜不喜欢我！请回答“喜欢” 或 “不喜欢”。');
+            if (input_love == '喜欢') {
+                alert("谢谢你喜欢我，我也喜欢你～MUA");
+                Check_Love = '输入正确';
+            }
+            else {
+                if (input_love == '不喜欢') {
+                    alert("回答错误，请重新回答！");
+                }
+                if (input_love != '喜欢' && input_love != '不喜欢') {
+                    alert("请认真回答我的问题！ 不然我就生气了！哼！");
+                }
+            }
+        }
+
+        var time = 0;
+        //距离某一天的时间
+        var a = new Date('2020-9-17');
+        var b = new Date();
+        var c = (b - a) / (1000 * 60 * 60 * 24);
+        var Check_first_time_we_met = '';
+        var First_Time = Math.floor(c);
+
+        console.log("在一起 ", First_Time, " 天了");//Math.floor向下取整取整数
+        if (isNaN(First_Time) != true) {
+
+            while (Check_first_time_we_met != '输入正确') {
+
+                var input_num = prompt('我们在一起多少天了？');
+
+                if (input_num == First_Time) {
+                    if (time <= 1) {
+                        alert("我也觉得这题难不倒你~");
+                    }
+                    if (time == 2) {
+                        alert("没想到这题对你居然有点难度。。");
+                    }
+                    if (time >= 3) {
+                        alert("又蒙对了，算了，大慈大悲的我选择原谅你一次。。");
+                    }
+                    Check_first_time_we_met = '输入正确';
+                }
+                else {
+                    if (time == 0) {
+                        alert("还剩下 2 次机会，要加油咯～");
+                    }
+                    if (time == 1) {
+                        alert("还剩下 1 次机会，咱的感情是塑料的赶脚～");
+                    }
+                    if (time >= 2 && time < 5) {
+                        alert("哎， 再给你亿次机会你也不可能对了。。。");
+                    }
+                    if (time == 5) {
+                        alert("哎，算了，我告诉你吧，是 " + First_Time + " 天啦");
+                    }
+                    if (time == 6) {
+                        alert("不是吧，看着答案都能错..激动的手抖吗？ " + First_Time + " 天啦！");
+                    }
+                    if (time == 7) {
+                        alert("算了，这题不问了，下一题!");
+                        Check_first_time_we_met = '输入正确';
+                    }
+                    ++time;
+
+                }
+            }
+        }
+        alert("接下里才是见真章的时候咯～只有答对了才能继续下去");
+
+        var Check = '';
+        while (Check != '输入正确') {
+            var input = prompt('我身高多高？');
+            if (input == 184) {
+                Check = '输入正确';
+            }
+            else {
+                alert("要加油奥，再试试吧～");
+            }
+        }
+
+        var Check = '';
+        while (Check != '输入正确') {
+            var input = prompt('我最喜欢的球类运动是什么？');
+            if (input == '羽毛球') {
+                alert('有点东西奥～');
+                Check = '输入正确';
+            }
+            else {
+                alert("要加油奥，再试试吧～");
+            }
+        }
+
+        var Check = '';
+        while (Check != '输入正确') {
+            var input = prompt('我脚多大？');
+            if (input == 44.5) {
+                alert("厉害厉害。。");
+                Check = '输入正确';
+            }
+            else {
+                alert("要加油奥，再试试吧～");
+            }
+        }
+
+        var Check = '';
+        while (Check != '输入正确') {
+            var input = prompt('什么东西是我一做就很难停下来的？');
+            if (input == '弹钢琴' || input == '钢琴' || input == '工作') {
+                Check = '输入正确';
+            }
+            else {
+                alert("要加油奥，再试试吧～");
+            }
+        }
+
+        var Check = '';
+        while (Check != '输入正确') {
+            var input = prompt('我家猫叫什么？');
+            if (input == 'Candy' || input == 'candy' || input == '喵喵') {
+                Check = '输入正确';
+            }
+            else {
+                alert("要加油奥，再试试吧～");
+            }
+        }
+
+        alert('最后一题咯～好吧，其实是我想不出来可以问啥了。。')
+
+        var Check = '';
+        while (Check != '输入正确') {
+            var input = prompt('我总是会一瞬间很想谁？');
+            if (input == 'Miki' || input == 'miki' || input == '我' || input == '何芳琪') {
+                alert("Wowwww~ 全部正确，快接住来自我大大滴爱心！Biu～");
+                Check = '输入正确';
+            }
+            else {
+                alert("要加油奥，再试试吧～");
+            }
+        }
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <div class="container" onselectstart="return false;" unselectable="on" style="-moz-user-select:none;">
+
+        <div class="body_left">
+            <img src="代码库/images/biubiubiu.gif" alt="" ondragstart='return false;'>
+        </div>
+
+        <div class="body_center love">
+            <div class="block">
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <div class="div3"></div>
+                <div class="div4"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="border">
+            <div class="border-top"></div>
+            <div class="border-bottom"></div>
+        </div>
+
+        <div class="copyright">
+            <div id="version"><span>Version:</span>&nbsp;0.0.2</div>
+            <div id="createTime"><span>Time:</span>&nbsp;2019/4/17</div>
+            <div id="author"><span>&copy;&nbsp;</span>xianchenxy</div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="代码库/js/love.js"></script>
+
+</body>
+
+</html>
