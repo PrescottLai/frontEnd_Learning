@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易ATM取款机</title>
+    <script>
+        var balance = 100;
+        do {
+            var choice = prompt('请输入您要的操作：\n1.存钱\n2.取钱\n3.显示余额\n4.退出');
+            switch (choice) {
+                case '1':
+                    var num = prompt("请您输入存入的钱数：");
+                    num = parseFloat(num);
+                    if (isNaN(num) != true && num > 0) {
+                        balance += num;
+                        alert("存入成功，您当前余额为：¥ " + balance);
+
+                    } else {
+                        alert("您输入有误，请重新操作");
+                    }
+                    break;
+                case '2':
+                    var num = prompt("请您输入取出的钱数：");
+                    num = parseFloat(num);
+                    if (isNaN(num) != true && num > 0 && num <= balance) {
+                        balance -= num;
+                        alert("取出成功，您当前余额为：¥ " + balance);
+                    } else if (num > balance) {
+                        alert("您余额不足，当前余额为：¥" + balance + ", 请重新操作");
+                    } else {
+                        alert("您输入有误，请重新操作");
+                    }
+                    break;
+                case '3':
+                    alert("您的当前余额为：¥" + balance);
+                    break;
+                case '4':
+                    alert("感谢您的使用，祝您生活愉快，再见！");
+                    break;
+
+                default:
+                    alert("您输入有误，请重新操作");
+
+            }
+
+        } while (choice != '4')
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

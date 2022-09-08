@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的使用</title>
+    <script>
+        //函数使用分为两步：声明函数 和 调用函数
+        //1. 声明函数
+        /* 
+         function 函数名(形参1，形参2...){   //形象上的参数
+            函数体
+        }
+        */
+
+        function sayHi() {
+            console.log('hi~~~');
+        }
+
+        // （1）function 关键字全部小写
+        // （2）函数是做某件事情，函数名一般是动词
+        // （3）函数不调用，自己不执行
+
+        //2. 调用函数,调用语法： 函数名+小括号
+        /*
+        函数名（实参1，实参2 ...); //实际的参数
+        */
+        sayHi();
+
+        function getSum(num1, num2) {
+            console.log(num1 + num2);
+        }
+
+        //3. 如果实参的个数和形参的个数一致，则正常的输出结果
+        getSum(1, 2);
+        //4. 如果实参的个数多于形参的个数,会取到形参的个数
+        getSum(1, 2, 3);
+        //5. 如果实参的个数少于形参的个数 （形参可以看作是不用声明的变量， num2 是一个变量但是没有接受值 结果就是 undefined
+        getSum(1);
+        //建议： 尽量让形参与实参的个数一样。
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

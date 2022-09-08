@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组的使用</title>
+    <script>
+        //1. 数组（Array)：就是一组数据的集合 存储在单个变量下的优雅方式～
+        //2.利用 new 创建数组
+        var arr = new Array();//第一种创建数组的方式，A要大写！
+        var arr = [];//第二种，也是最常见的创建数组的方式。
+        //3.数组里可以有各种元素，获取数组特定元素，需要利用“索引号”，例如 arr=['as', 2, 4, pink], arr[3] = pink, 索引号从 0 开始。
+        //4.遍历数组：
+        arr = ['关羽', '张飞', '赵云', '马超', '诸葛', '刘备'];
+        for (var i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+
+        //5.求数组最大值
+        //【2, 6, 1, 77, 52, 25, 99】, 遍历，打擂台！打赢的留下。
+        var arr = [2, 6, 1, 77, 52, 25, 99];
+        var max = arr[0];
+        for (var i = 1; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+            }
+        }
+        console.log("最大的数字是：" + max);
+
+        //6. 在数组中添加分隔符
+        //将数组['red', 'green', 'blue', 'pink'] 转换为字符串， 并且用｜或其他符号分割
+        var arr = ['red', 'green', 'blue', 'pink'];
+        var str = '';
+        var sep = '|';
+        for (var i = 0; i < arr.length; i++) {
+            str += arr[i] + sep;
+        }
+        console.log(arr.join('|'));// .join("分隔符")，元素通过指定的分隔符进行分隔，.join(), 默认分隔符为逗号 ","
+        console.log(str);
+
+        //7.[2, 0, 0, 6, 1, 77, 0, 52, 0, 25, 7] 把大于等于10的元素放进新数组
+        var arr = [2, 0, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] >= 10) {
+                newArr[newArr.length] = arr[i];
+            }
+        }
+        console.log(newArr);
+
+        //8.将array里面的0去除，[2, 0, 6, 1, 77, 0, 52, 0, 25, 7]
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                newArr[newArr.length] = arr[i];
+            }
+        }
+        console.log(newArr);
+
+        //9.翻转数组 ['red', 'green', 'blue', 'pink', purple]
+        var arr = ['red', 'green', 'blue', 'pink', 'purple']
+        var newArr = [];
+        for (var i = arr.length - 1; i >= 0; i--) {
+            newArr[newArr.length] = arr[i];
+        }
+        console.log(newArr);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

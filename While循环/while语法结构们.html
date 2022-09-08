@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.第一种语法结构
+        /*
+        while(条件表达式){
+            循环体代码
+        }
+        */
+        //2.第二种语法结构（其实是while的一个变体）
+        /*
+        do{
+         循环体代码
+        }while(条件表达式)
+ 
+        执行思路：先执行一次循环体代码，在执行判断条件表达式，如果为true，则继续执行循环体代码，反之则退出循环，继续执行后面的代码。
+        */
+        do {
+            var message = prompt("你爱我吗？？？");
+        } while (message != '我爱你' && message != '爱')
+        alert('我也爱你呀～');
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
