@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arguments</title>
+    <script>
+        //arguments 的使用
+        console.log("----------------------arguments 的使用-------------------")
+        function fn() {
+            console.log(arguments);
+            console.log(arguments.length);
+        }
+        fn(1, 2, 3);
+        //伪数组 并不是真正意义上的数组
+        //1. 具有数组的length 属性
+        //2. 按照索引的的方式进行存储
+        //3. 它没有真正数组的一些方法 pop() push()等等
+        //4. 它是每个函数内置好的功能，只有函数拥有
+
+        //冒泡排序利用arguments封装
+        console.log("----------------------封装冒泡排序-------------------");
+        function bubbleSort() {
+
+            for (var i = 0; i < arguments.length; i++) {
+                for (var j = 0; j < arguments.length - i; j++) {
+                    if (arguments[j] > arguments[j + 1]) {
+                        var temp = arguments[j];
+                        arguments[j] = arguments[j + 1];
+                        arguments[j + 1] = temp;
+                    }
+                }
+                //console.log("check");
+                //console.log(arguments);
+            }
+            return arguments;
+        }
+
+        arr = bubbleSort(6, 2, 7, 23, 7, 3, 4, 1, 7, 4, 1);
+        console.log(arr);
+
+        //封装求任意个数的最大值利用arguments
+        console.log("----------------------封装求任意个数的最大值--------------------");
+        function getMax() {
+            var max = arguments[0];
+            for (var i = 0; i < arguments.length; i++) {
+                if (max < arguments[i]) {
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+
+        console.log(getMax(1, 2, 3));
+        console.log(getMax(1, 2, 3, 5, 2));
+        console.log(getMax(1, 2, 3, 125));
+
+        //封装数组顺序翻转利用arguments
+        console.log("----------------------封装数组顺序翻转--------------------");
+        function reverse() {
+            var newArr = []
+            for (var i = arguments.length - 1; i >= 0; i--) {
+                newArr[newArr.length] = arguments[i];
+            }
+            return newArr;
+        }
+        var arr = reverse('red', 'green', 'pink', 'love');
+        console.log(arr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
