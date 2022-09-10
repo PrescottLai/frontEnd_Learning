@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作用域</title>
+
+    <script>
+        //1. Javascript作用域： 就是代码名字（变量）在某个范围内起作用和效果 目的是为了提高程序的可靠性，
+        //更重要是减少命名的冲突
+        //2. js的作用域(es6)之前： 全局作用域    局部作用域、
+        //3. 全局作用域； 整个script标签 或者是一个单独的js的文件
+        var num = 10;  //全局变量，在全局情况下都可以用
+        console.log(num);
+        //4. 局部作用域（函数作用域）：在函数内部就是局部作用域 这个代码的名字之在函数内部起效果和作用
+        function fn(){
+            //局部作用域
+            var num = 20;  //局部变量，只有在函数内部使用
+            num2 = 100;   // 在函数内部没有声明直接赋值的，也是全局变量（不建议这样去用）
+            console.log(num);
+        }
+        
+        fn();
+        console.log(num2);
+
+        //4. 从执行效率来看全局变量和局部变量
+        //（1）全局变量只有在浏览器关闭的时候才会销毁，比较占用内存资源
+        //（2）局部变量 当我们程序执行完毕就会销毁，比较节约内存资源
+
+        //----------------块级作用域----------------
+        //js 中一般没有块级作用域，js 只是在 es6 的时候新增的块级作用域
+        //块级作用域{} if{} for{}
+        //在Java里面
+        // if(xx){
+        //     int num = 10;
+        // }
+        //外面的是不能调用num的
+        if(3 < 5){
+            var num = 10; // 块级作用域变量不会被块级限制，可以全局使用
+        }
+        console.log(num);
+
+        //--------------------作用域链------------------------
+        //内部函数访问外部函数的变量，采取的是链式查找的方式来决定取哪个值，这种和结构我们成为作用域链
+        //其实就是：就近原则，一层层网上查找，看有没有需要的变量值。
+        var num3 = 10;
+
+        function fn2(){
+            var num3 = 20;  
+            function fun(){
+                console.log(num3);// 站在目标，一层一层往上找，就近原则，链式查找，最终会选择最近的 num3
+            }
+            fun();
+        }
+
+        fn2();
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

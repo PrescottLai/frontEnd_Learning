@@ -1,0 +1,35 @@
+————————————————————————上传——————————————————————
+Github token: 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
+git init //建立git bash，建立一个仓库用来存储，没有的话去官网下载
+git add . //把当前文件夹内的文件都添加到这个仓库里。git status(查看是否添加)
+git commit -m "当前版本的名字" // 把当前仓库内的文件，存档，类似游戏存档，以确保以后能找回这个版本，git log(查看操作日志，commit了几次)
+git remote add <自定节点名称> <节点网址>// 与远端的一个网址节点建立联系，类似登陆了google drive，git remote rm <节点名字>，可以删除这个节点,节点网址记得加token，git remote add origin https://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@github.com/PrescottLai/JavaScript_Learning.git
+git push -u <自定节点名称> <Branch名字> // 把文件全部扔上去，类似上传文件去google drive，只不过github会有一个版本管理的功能。
+                          //-u 是为了把“<自定节点名称> <Branch名字>”设置成预设值，下次就可以直接git push
+每次修改文件后，都要记得，
+1.git add . 
+2.git commit -m "当前版本的名字"
+3.git push
+
+——————————————————————————下载————————————————————
+git clone  <网址>                      注意下载下来后要进入这个文件夹才能查看分支，切换分支，一般情况下，都默认显示“main”分支
+
+查看分支：git branch
+
+查看所有分支（包括隐藏的）：git branch -a      隐藏的一般是远程的分支 可以用 git branch -r 单独查看
+
+创建分支：git branch <name>
+
+创建本地分支并跟踪远程分支：git checkout -t <主机名字>/<主机名字下的分支名字>  例如：git checkout -t origin/master    该命令会先 track 远程主机的分支 master， 并在本地建立一个于分支同样的名字 master 来 跟踪 远程分支 origin/master
+
+切换分支：git checkout <name>或者git switch <name>
+
+创建+切换分支：git checkout -b <name>或者git switch -c <name>
+
+合并某分支到当前分支：git merge <name>
+
+删除分支：git branch -d <name>
+
+查看所有远程主机：git remote
+
+查看远程主机的网址： git remote -v
