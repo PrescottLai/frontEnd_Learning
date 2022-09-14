@@ -1,5 +1,5 @@
 ————————————————————————上传——————————————————————
-Github token: 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
+Github access token: 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
 git init //建立git bash，建立一个仓库用来存储，没有的话去官网下载
 git add . //把当前文件夹内的文件都添加到这个仓库里。git status(查看是否添加)
 git commit -m "当前版本的名字" // 把当前仓库内的文件，存档，类似游戏存档，以确保以后能找回这个版本，git log(查看操作日志，commit了几次)

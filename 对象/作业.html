@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象作业</title>、
+    <script>
+        // 1. 创建一个电脑对象，该对象要有颜色，重量，型号，可以看电影，听音乐，打游戏和敲代码。
+        var PC = {
+            Color: "Black",
+            Weight: "80kg",
+            Model: "18pro",
+            Movie: function () {
+                console.log( 'Movie start' );
+            },
+            Music: function () {
+                console.log( 'Music start' );
+            },
+            Coding: function () {
+                console.log( 'Code start' );
+            }
+        }
+        for ( var k in PC ) {
+            console.log( PC[ k ] )
+        }
+        // 2. 创建一个按钮对象，该对象中需要包含宽，高，背景颜色和点击行为。
+        var Button = {
+            Wide: "10cm",
+            Height: "20cm",
+            backgroundColor: "Black",
+            push: function () {
+                console.log( "按下去啦！" );
+            }
+        }
+
+        console.log( Button );
+        Button.push();
+
+        // 3. 创建一个车的对象，该对象要有重量，颜色， 牌子， 可以载人， 拉货和耕田。
+        var Car = {
+            Weight: "100kg",
+            Color: "Red",
+            Brand: "Tesla",
+            ridePeople: function () {
+                console.log( "我能载人" );
+            },
+            Transmit: function () {
+                console.log( "我能拉货" );
+            },
+            Till: function () {
+                console.log( "我能耕田" );
+            }
+        }
+        console.log( Car );
+        Car.ridePeople();
+        Car.Transmit();
+        Car.Till();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

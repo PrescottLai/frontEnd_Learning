@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王者荣耀的构造函数</title>
+    <script>
+        function Hero( Name, Type, Blood ) {
+            this.name = Name;
+            this.type = Type;
+            this.blood = Blood;
+            this.Attack = function ( attackType ) {
+                console.log( attackType );
+            }
+
+        }
+
+        var LP = new Hero( "廉颇", "力量型", "500血量" );
+
+        console.log( LP );
+
+        console.log( LP.name );
+        console.log( LP.type );
+        console.log( LP.blood );
+        LP.Attack( "近战" );
+
+        var HY = new Hero( "后裔", "射手型", "100血量" );
+
+        console.log( HY );
+
+        console.log( HY.name );
+        console.log( HY.type );
+        console.log( HY.blood );
+        LP.Attack( "远程攻击" );
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
