@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易计算器</title>
+    <script>
+        do {
+            var choice = prompt( "欢迎使用简易计算器：\n1.加法运算；\n2.减法运算；\n3.乘法运算；\n4.除法运算；\n5.退出;\n请输入您的选项：" );
+
+            switch ( choice ) {
+                case "1":
+                    num1 = parseFloat( prompt( "请输入第一个数字:" ) );
+                    num2 = parseFloat( prompt( "请输入第二个数字:" ) );
+                    if ( isNaN( num1 ) != true && isNaN( num2 ) != true ) {
+                        alert( "result is : " + ( num1 + num2 ) );
+                    } else {
+                        alert( "输入有误，请重新输入" );
+                    }
+                    break;
+
+                case "2":
+                    num1 = parseFloat( prompt( "请输入第一个数字:" ) );
+                    num2 = parseFloat( prompt( "请输入第二个数字:" ) );
+                    if ( isNaN( num1 ) != true && isNaN( num2 ) != true ) {
+                        alert( "result is : " + ( num1 - num2 ) );
+                    } else {
+                        alert( "输入有误，请重新输入" );
+                    }
+                    break;
+
+                case "3":
+                    num1 = parseFloat( prompt( "请输入第一个数字:" ) );
+                    num2 = parseFloat( prompt( "请输入第二个数字:" ) );
+                    if ( isNaN( num1 ) != true && isNaN( num2 ) != true ) {
+                        alert( "result is : " + ( num1 * num2 ) );
+                    } else {
+                        alert( "输入有误，请重新输入" );
+                    }
+                    break;
+
+                case "4":
+                    num1 = parseFloat( prompt( "请输入第一个数字:" ) );
+                    num2 = parseFloat( prompt( "请输入第二个数字:" ) );
+                    if ( isNaN( num1 ) != true && isNaN( num2 ) != true ) {
+                        alert( "result is : " + ( num1 / num2 ) );
+                    } else {
+                        alert( "输入有误，请重新输入" );
+                    }
+                    break;
+
+                case "5":
+                    alert( "感谢您的使用，祝您生活愉快，再见！" );
+                    break;
+
+                default:
+                    alert( "输入有误，请重新输入" );
+                    break;
+
+            }
+
+        } while ( choice != 5 )
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

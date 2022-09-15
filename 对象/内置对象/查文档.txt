@@ -1,0 +1,4 @@
+1.MDN / W3C (推荐使用MDN)
+学习一个内置对象的使用，只要学会其常用成员的使用即可，我们可以通过查文档学习，可以通过MDN/W3C 来查询。
+Mozilla开发者网络（MDN）提供了有关开放网络技术（Open Web）的信息，包括HTML、CSS和万维网及HTML5应用的API。
+MDN: https://developer.mozilla.org/zh-CN/
