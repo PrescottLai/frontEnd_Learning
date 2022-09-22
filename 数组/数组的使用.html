@@ -13,60 +13,132 @@
         var arr = [];//第二种，也是最常见的创建数组的方式。
         //3.数组里可以有各种元素，获取数组特定元素，需要利用“索引号”，例如 arr=['as', 2, 4, pink], arr[3] = pink, 索引号从 0 开始。
         //4.遍历数组：
-        arr = ['关羽', '张飞', '赵云', '马超', '诸葛', '刘备'];
-        for (var i = 0; i < arr.length; i++) {
-            console.log(arr[i]);
+        arr = [ '关羽', '张飞', '赵云', '马超', '诸葛', '刘备' ];
+        for ( var i = 0; i < arr.length; i++ ) {
+            console.log( arr[ i ] );
         }
 
         //5.求数组最大值
         //【2, 6, 1, 77, 52, 25, 99】, 遍历，打擂台！打赢的留下。
-        var arr = [2, 6, 1, 77, 52, 25, 99];
-        var max = arr[0];
-        for (var i = 1; i < arr.length; i++) {
-            if (max < arr[i]) {
-                max = arr[i];
+        var arr = [ 2, 6, 1, 77, 52, 25, 99 ];
+        var max = arr[ 0 ];
+        for ( var i = 1; i < arr.length; i++ ) {
+            if ( max < arr[ i ] ) {
+                max = arr[ i ];
             }
         }
-        console.log("最大的数字是：" + max);
+        console.log( "最大的数字是：" + max );
 
         //6. 在数组中添加分隔符
         //将数组['red', 'green', 'blue', 'pink'] 转换为字符串， 并且用｜或其他符号分割
-        var arr = ['red', 'green', 'blue', 'pink'];
+        var arr = [ 'red', 'green', 'blue', 'pink' ];
         var str = '';
         var sep = '|';
-        for (var i = 0; i < arr.length; i++) {
-            str += arr[i] + sep;
+        for ( var i = 0; i < arr.length; i++ ) {
+            str += arr[ i ] + sep;
         }
-        console.log(arr.join('|'));// .join("分隔符")，元素通过指定的分隔符进行分隔，.join(), 默认分隔符为逗号 ","
-        console.log(str);
+        console.log( arr.join( '|' ) );// .join("分隔符")，元素通过指定的分隔符进行分隔，.join(), 默认分隔符为逗号 ","
+        console.log( str );
 
         //7.[2, 0, 0, 6, 1, 77, 0, 52, 0, 25, 7] 把大于等于10的元素放进新数组
-        var arr = [2, 0, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var arr = [ 2, 0, 0, 6, 1, 77, 0, 52, 0, 25, 7 ];
         var newArr = [];
-        for (var i = 0; i < arr.length; i++) {
-            if (arr[i] >= 10) {
-                newArr[newArr.length] = arr[i];
+        for ( var i = 0; i < arr.length; i++ ) {
+            if ( arr[ i ] >= 10 ) {
+                newArr[ newArr.length ] = arr[ i ];
             }
         }
-        console.log(newArr);
+        console.log( newArr );
 
         //8.将array里面的0去除，[2, 0, 6, 1, 77, 0, 52, 0, 25, 7]
-        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var arr = [ 2, 0, 6, 1, 77, 0, 52, 0, 25, 7 ];
         var newArr = [];
-        for (var i = 0; i < arr.length; i++) {
-            if (arr[i] != 0) {
-                newArr[newArr.length] = arr[i];
+        for ( var i = 0; i < arr.length; i++ ) {
+            if ( arr[ i ] != 0 ) {
+                newArr[ newArr.length ] = arr[ i ];
             }
         }
-        console.log(newArr);
+        console.log( newArr );
 
         //9.翻转数组 ['red', 'green', 'blue', 'pink', purple]
-        var arr = ['red', 'green', 'blue', 'pink', 'purple']
+        var arr = [ 'red', 'green', 'blue', 'pink', 'purple' ]
         var newArr = [];
-        for (var i = arr.length - 1; i >= 0; i--) {
-            newArr[newArr.length] = arr[i];
+        for ( var i = arr.length - 1; i >= 0; i-- ) {
+            newArr[ newArr.length ] = arr[ i ];
         }
-        console.log(newArr);
+        console.log( newArr );
+
+        console.log( '-----------------------添加删除数组元素的方法------------------------' );
+        // 添加删除数组元素的方法
+        // 1. push() 在数组的末尾 添加一个或多个的数组元素  push 推
+        var arr = [ 1, 2, 3 ];
+        // arr.push(4,'pink');
+        console.log( arr.push( 4, 'pink' ) ); //返回的结果是新数组的长度
+        console.log( arr );
+        //（1）push 是可以给数组追加新的元素
+        //（2）push() 参数直接写 数组元素就可以了
+        //（3）push完毕之后，返回的结果是新数组的长度
+        //（4）原数组也会发生变化
+
+        // 2. unshift 在我们数组的开头 添加一个或者多个数组元素
+        console.log( arr.unshift( 'red', 'purple' ) ); //返回的结果是新数组的长度
+        console.log( arr );
+        //（1）unshift是可以给数组前面追加新的元素
+        //（2）unshift() 参数直接写 数组元素就可以了
+        //（3）unshift完毕之后，返回的结果是新数组的长度
+        //（4）原数组也会发生变化
+
+        // 3.pop（）它可以删除数组的最后一个元素
+        console.log( arr.pop() );
+        console.log( arr );
+        //（1）pop是可以删除数组的最后一个元素 记住一次只能删除一个元素
+        //（2）pop() 没有参数
+        //（3）pop完毕之后，返回的结果是 删除的那个元素
+        //（4）原数组也会发生变化
+
+        // 4. shift() 它可以删除数组的第一个元素
+        console.log( arr.shift() );
+        console.log( arr );
+        //（1）shift是可以删除数组的第一个元素 记住一次只能删除一个元素
+        //（2）shift() 没有参数
+        //（3）shift完毕之后，返回的结果是删除的那个元素
+        //（4）原数组也会发生变化
+
+        console.log( '---------------返回数组元素索引号方法  indexof（数组元素）--------------' );
+        //作用就是返回该数组元素的索引号 从前面开始查找
+        //它只返回第一个满足条件的索引号
+        //它如果在该数组里面找不到元素，则返回的是-1
+        // var arr = ['red','green', 'blue','pink','blue'];
+        var arr = [ 'red', 'green', 'pink' ];
+        console.log( arr.indexOf( 'blue' ) );
+        // 返回数组元素索引号方法  lastIndexOf（数组元素） 作用就是返回该数组元素的索引号 从后面开始查找
+        var arr = [ 'red', 'green', 'blue', 'pink', 'blue' ];
+        console.log( arr.lastIndexOf( 'blue' ) );//4
+
+        //数组去重
+        console.log( "----------------------数组去重--------------------" );
+        var arr = [ 1, 2, 34, 2, 1, 3, 4, 4, 5 ]
+        function unique( arr ) {
+            var newArr = []
+            for ( var i = 0; i < arr.length; i++ ) {
+                if ( newArr.indexOf( arr[ i ] ) === -1 ) {
+                    newArr.push( arr[ i ] );
+                }
+            }
+            return newArr;
+        }
+        var demo = unique( arr )
+        console.log( demo );
+
+        // 数组转换为字符串
+        // 1. toString() 将我们的数组转换为字符串
+        var arr = [ 1, 2, 3 ];
+        console.log( arr.toString() );//1,2,3 
+        //2.join（分隔符）
+        var arr1 = [ 'green', 'blue', 'pink' ];
+        console.log( arr1.join() );//green,blue,pink 
+        console.log( arr1.join( '-' ) ); // green-blue-pink 
+        console.log( arr1.join( '&' ) ); // green&blue&pink
 
     </script>
 </head>
