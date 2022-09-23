@@ -146,16 +146,16 @@
             var ch = [];                                        // 利用数组的形式存储出现 最多次数的 字符元素，因为有可能有相同次数 但 不同元素的情况
             for ( var k in obj ) {                              // 遍历 对象里 的 元素 并找出 出现最多的 次数
                 if ( obj[ k ] > max ) {
-                    max = obj[ k ];
+                    max = obj[ k ];                             // 获得最高次数
                 }
             }
-            for ( var k in obj ) {
-                if ( obj[ k ] == max && !ch.includes( k ) ) {
+            for ( var k in obj ) {                              // 再次遍历对象，将出现最高次数的 元素 放进数组
+                if ( obj[ k ] == max && !ch.includes( k ) ) {   // 只有满足 出现次数最多 以及 数组里不包含的元素 才能放进数组
                     ch.push( k );
                 }
             }
 
-            ch.push( '共出现 ' + max + ' 次' );
+            ch.push( '共出现 ' + max + ' 次' );                 // 次数放在数组的最后作为最后的元素显示出来
             return ch;
         }
         var arr = Count( str );
