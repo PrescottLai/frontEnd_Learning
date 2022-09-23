@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串综合练习</title>
+    <script>
+        /*
+            给定一个字符串，如∶“abaasdffggghhjjkkgfddsssss344343”，问题如下∶
+            1、字符串的长度
+            2、取出指定位置的字符，如∶0，3，5，9等
+            3、查找指定字符是否在以上字符串中存在，如∶i，c，b等
+            4、替换指定的字符，如∶g替换为22，ss替换为b等操作方法
+            5、截取指定开始位置到结束位置的字符串，如∶取得1-5的字符串么
+            6、找出以上字符串中出现次数最多的字符和出现的次数
+        */
+
+        var str = 'abaasdffggghhjjkkgfddsssss344343';
+        console.log( '---------------------1、字符串的长度----------------------' );
+        //1、字符串的长度
+        console.log( str.length );
+        console.log( '\n' );
+
+        //2、取出指定位置的字符，如∶0，3，5，9等
+        console.log( '-------2、取出指定位置的字符，如∶0，3，5，9等--------' );
+        function strDraw( str, arr ) { // 扔一个字符串 和 要提取的位置数组 进来，返回一个 提取后的 数组 
+            var newArr = []
+            for ( var i = 0; i < arr.length; i++ ) {
+                if ( arr[ i ] >= str.length ) {
+                    return '您输入的"位置"有误，请确保输入的位置在字符串长度以内并重新输入。'
+                }
+                newArr.push( str[ arr[ i ] ] );
+            }
+            return newArr;
+        }
+
+        var Arr = strDraw( str, [ 0, 3, 5, 9 ] );
+        console.log( Arr );
+        console.log( '\n' );
+
+        //3、查找指定字符是否在以上字符串中存在，如∶i，c，b等
+        //(1) 封装一个函数，形参为 字符串 和 数组
+        //(2) 将含有 要查找的指定字符串元素 的 数组 遍历
+        //(3) 新建一个 对象 ，一边遍历数组，一边将数组的元素 放进 对象中 建立一个 ‘键’
+        //(4) 每放进一个 就 查找一个 元素，如果有，就建立一个 键值对，显示有多少个， 如果没有，就显示'not found'
+        //(5) 返回一个 对象 结果
+        var str = 'abaasdffggghhjjkkgfddsssss344343';
+
+        console.log( '----3、查找指定字符是否在以上字符串中存在，如∶i，c，b等-------' );
+        function strLookUp( str, arr ) {
+            var newObj = {};
+            for ( var i = 0; i < arr.length; i++ ) {
+                var chars = arr[ i ];
+
+                var index = str.indexOf( chars );
+                if ( index == -1 ) {
+                    newObj[ chars ] = 'NOT FOUND';
+                } else {
+                    newObj[ chars ] = 1;
+                    index = str.indexOf( chars, index + 1 )
+                    while ( index !== -1 ) {
+                        newObj[ chars ]++;
+                        index = str.indexOf( chars, index + 1 )
+                    }
+                }
+            }
+            return newObj;
+        }
+
+        var Obj = strLookUp( str, [ 'i', 'c', 'b', 'g', 's', '3' ] );
+        console.log( Obj );
+        console.log( '\n' );
+
+        //4、替换指定的字符，如∶g替换为22，ss替换为b等操作方法
+        //(1) 封装一个函数 形参是 数组 和 对象
+        //(2) 对象里存储的是（ “要被替换的元素” 和 “代替的元素”）的键值对
+        //(3) 一边按顺序遍历 对象，同时遍历数组 查找该元素是否存在。
+        //(4) 如果存在，执行“元素替换”，如果不存在，将不存在的元素放进数组并显示出来。
+        //(5) 返回结果
+        var str = 'abaasdffggghhjjkkgfddsssss344343';
+
+        console.log( '---------4、替换指定的字符，如∶g替换为22，ss替换为b等操作方法---------' );
+        function strReplace( str, obj ) {
+            var notIncludeStr = [];
+            for ( k in obj ) {
+                index = str.indexOf( k )
+                if ( index == -1 ) {
+                    notIncludeStr.push( k );
+                }
+                while ( index !== -1 ) {
+                    str = str.replace( k, obj[ k ] );
+                    index = str.indexOf( k, index + 1 );
+                }
+            }
+            console.log( '不在字符串里的有： ' );
+            console.log( notIncludeStr );
+            return str;
+        }
+
+        var obj = {
+            g: 22,
+            ss: 'b',
+            f: '@',
+            z: '!',
+            8: 4,
+            '!': 'love'
+        }
+        var newStr = strReplace( str, obj );
+        console.log( newStr );
+        console.log( '\n' );
+
+
+
+        //5、截取指定开始位置到结束位置的字符串，如∶取得1-5的字符串
+        var str = 'abaasdffggghhjjkkgfddsssss344343';
+        console.log( '---------5、截取指定开始位置到结束位置的字符串，如∶取得1-5的字符串---------' );
+
+        str = str.substring( 1, 6 );
+        console.log( str );
+        console.log( '\n' );
+
+        //6、找出以上字符串中出现次数最多的字符和出现的次数
+        //核心算法：将传入的 字符串 遍历一边，在遍历的过程中，统计每个元素的数量，并创建对应的 对象 存储在其中，最后遍历 对象 来获取 出现次数最多的字符和次数
+        var str = 'abaasdffggghhjjkkgfddsssss344343';
+        console.log( '-------6、找出以上字符串中出现次数最多的字符和出现的次数--------' );
+
+        function Count( str ) {
+            var obj = {};
+            for ( var i = 0; i < str.length; i++ ) {            // 开始遍历传入的 字符串
+                var index = i;                                  // 注意index的起始位置要跟着 循环 i 往前走
+                var chars = str[ i ];                           // 将当前字符串位置的 元素 提取出来
+                if ( Object.hasOwn( obj, str[ i ] ) ) {         // 判断 在对象里 是否已经拥有该属性（元素）
+                    continue;                                   // 如果有 就直接进入 下一个循环
+                }
+                obj[ chars ] = 1;                               // 如果没有，就创建新的 属性（键），并赋值 1，代表以查找到1个 该元素
+                index = str.indexOf( str[ i ], index + 1 );     // 从当前 字符串索引位置 的 后一个位置开始，继续查找 是否还有同样的元素
+                while ( index !== -1 ) {                        // 只要还有同样的元素，每查找到一个 就在对象里，给该 元素（属性，键）的值 +1
+                    obj[ chars ]++;                             // 统计总共有多少个同样的该元素
+                    index = str.indexOf( str[ i ], index + 1 ); // 继续从后一个索引位置查找是否还有同样的该元素，直至没有，跳出循环
+                }
+            }
+            console.log( obj );                                 // 输出每个 字符串 里的元素 各出现了多少次
+            var max = 0;
+            var ch = [];                                        // 利用数组的形式存储出现 最多次数的 字符元素，因为有可能有相同次数 但 不同元素的情况
+            for ( var k in obj ) {                              // 遍历 对象里 的 元素 并找出 出现最多的 次数
+                if ( obj[ k ] > max ) {
+                    max = obj[ k ];
+                }
+            }
+            for ( var k in obj ) {
+                if ( obj[ k ] == max && !ch.includes( k ) ) {
+                    ch.push( k );
+                }
+            }
+
+            ch.push( '共出现 ' + max + ' 次' );
+            return ch;
+        }
+        var arr = Count( str );
+        console.log( arr );
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

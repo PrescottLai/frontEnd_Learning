@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查找字符串中某个字符出现的次数</title>
+    <script>
+        //查找字符串"abcoefoxyozzopp"中所有o出现的位置及次数
+        //核心算法： 先查找第一个 o 的 index 索引位置
+        //然后 只要 indexOf 返回的结果不是 -1 就代表还有 o 存在， 接着继续往后查找
+        //因为 indexOf 只能查找到第一个出现的 索引位置，所以 第二次循环查找的起始位置要从第一个出现的 索引位置处+1 开始查找
+        var str = "abcoefoxyozzopp";
+        var index = str.indexOf( 'o' );
+        var num = 0;
+        while ( index !== -1 ) {
+            console.log( index );
+            index = str.indexOf( 'o', index + 1 );
+            num += 1;
+        }
+        console.log( 'o 字母总共出现了： ' + num + ' 次' );
+
+        //课后作业 ['red', 'blue','red','green','pink','red'], 求 red 的出现的位置和次数
+        var arr = [ 'red', 'blue', 'red', 'green', 'pink', 'red' ];
+        var index = arr.indexOf( 'red' );
+        var num = 0;
+        while ( index !== -1 ) {
+            console.log( index );
+            index = arr.indexOf( 'red', index + 1 );
+            num += 1;
+        }
+        console.log( 'red 单词出现的次数是： ' + num + ' 次' );
+
+        //根据位置返回字符
+        // 1. charAt（index） 根据位置返回字符
+        var str = 'andy';
+        console.log( str.charAt( 3 ) );
+        //遍历所有的字符
+        for ( var i = 0; i < str.length; i++ ) {
+            console.log( str.charAt( i ) );
+        }
+        //2.charCodeAt（index） 返回相应索引号的字符ASCII值 目的判断用户按下了那个键|
+        console.log( str.charCodeAt( 0 ) );// 97 
+        //3.str[index] H5新增的
+        console.log( str[ 0 ] );  // a 
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

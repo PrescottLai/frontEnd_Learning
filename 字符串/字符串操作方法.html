@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串操作方法</title>
+    <script>
+        //1. concat('字符串1', '字符串2', ......)
+        // 相当于 str1 + str2 + .....
+        var str = 'andy';
+        console.log( str.concat( 'red' ) );
+
+        //2. substr('截取的起始位置', '截取几个字符');
+        var str1 = '改革春风吹满地';
+        console.log( str1.substr( 2, 2 ) ); // 春风
+
+        //3. substring('截取的起始位置', '截取的结束位置')， 结束位置取不到
+        var str2 = '改革春风吹满地';
+        console.log( str2.substring( 2, 4 ) );//春风
+        console.log( str2.substring( 2, 0 ) );//改革
+        //如果截取的结束位置是 <= 0， 输出结果是 从 字符串 索引0 的位置 一直到 截取的起始位置
+
+        //4. 替换字符replace('被替换的字符', '替换为的字符') 它只会替换第一个字符
+        var str3 = 'andyandy';
+        console.log( str3.replace( 'a', 'b' ) );
+        // 有一个字符串 'abcoefoxyozzopp' 要求把里面所有的 o 替换为 *
+        var str4 = 'abcoefoxyozzopp';
+        while ( str4.indexOf( 'o' ) !== -1 ) {
+            str4 = str4.replace( 'o', '*' );
+        }
+        console.log( str4 );
+
+        //5. 字符转换为数组 split('分隔符')  前面我们学过 join 把数组转换为字符串
+        var str5 = 'red, pink, blue';
+        console.log( str5.split( ',' ) );
+        var str6 = 'red&pink&blue';
+        console.log( str6.split( '&' ) );
+
+        //6. 转换大小写
+        var str7 = 'reD, piNk, bLUe';
+        console.log( str7.toUpperCase() );
+        console.log( str7.toLowerCase() );
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

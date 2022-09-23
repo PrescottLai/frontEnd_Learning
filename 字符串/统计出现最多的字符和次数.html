@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>统计出现最多的字符和次数</title>
+    <script>
+        // 利用一个对象来判断是否有该属性 对象['对象名']
+        var o = {
+            age: 18
+        }
+        if ( o[ 'age' ] ) {
+            console.log( '里面有该属性' );
+        } else {
+            console.log( '没有改属性' );
+        }
+
+        //abcoefoxyozzopp 统计这个字符串里出现最多的字符和次数
+
+        var str = 'abocefoxyozzopp'
+        var o = {};
+        for ( var i = 0; i < str.length; i++ ) {
+            var chars = str.charAt( i );
+            if ( o[ chars ] ) {
+                o[ chars ]++;
+            } else {
+                o[ chars ] = 1;
+            }
+        }
+        console.log( o );
+        var max = 0;
+        var ch = '';
+        for ( k in o ) {
+            if ( o[ k ] > max ) {
+                max = o[ k ];
+                ch = k;
+            }
+        }
+        console.log( '出现最多次数的字符： ' + "'" + ch + "'" + '\n出现的次数是： ' + max + '次' );
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
