@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操作元素之改变元素内容</title>
+</head>
+
+<body>
+    <button id="miki">Miki</button>
+    <button id="candy">Candy</button><br />
+    <!--换行标签 <br /> -->
+    <img src="图片/Candy丑照.png" alt="Candy丑照" title="Candy🐱" border="15" /> <!-- alt：图片显示不出来的时候用文字代替 -->
+    <script>
+        // 修改元素属性  src
+        // 1. 获取元素
+        var miki = document.getElementById( 'miki' );
+        var candy = document.getElementById( 'candy' );
+        var img = document.querySelector( 'img' );
+        // 注册事件
+        candy.onclick = function () {
+            img.src = "图片/Candy丑照.png";
+            img.title = "Candy🐱";
+            img.height = "527";
+
+        }
+        miki.onclick = function () {
+            img.src = "图片/miki.jpg";
+            img.title = "Miki🐖";
+            img.height = "704";
+            img.border = '15';
+        }
+    </script>
+</body>
+
+</html>
