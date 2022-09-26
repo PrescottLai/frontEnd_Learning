@@ -1,0 +1,141 @@
+
+/* 
+    1.布局定位属性：display/position/float/clear/visibility/overflow(建议display第一个写，毕竟关系到模式) 
+    2.自身属性：width/height/margin/padding/border/background 
+    3.文本属性：color/font/text-decoration/text-align/vertical-align/white-space/break-word 
+    4.其他属性： content/cursor/boder-radius/box-shadow/text-shadow/backgrond:linear-gradient... 
+ */
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+body {
+    background-color: #F3F5F7;
+}
+/* 确定板心的宽度 ps f8查看选框像素*/ 
+/* 建立一个类方便后面需要用版心尺寸的盒子调用 */
+.w {
+    width: 1200px;
+    margin: auto;
+}
+/* 清除所有 li 元素的 自带 style，比如·/123 */
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+/* ------------------------------------Header头部区域-------------------------------- */
+.header {
+    height: 42px;
+    /* background-color: pink; */
+        /* 
+    上下一样 30px 左右不用，但也要给个auto居中对齐，
+    因为上面 .w 已经给了一个 margin，
+    如果不设置左右，就会覆盖掉.w里面的margin，
+    上下左右都是30px了。 
+    */
+    margin: 30px auto;    
+
+}
+/* logo部分 */
+.logo {
+    float: left;
+    width: 195px;
+    height: 42px;
+    /* background-color: white; */
+}
+/* 导航栏部分 */
+.nav {
+    margin-left: 70px;
+    float: left;
+}
+.nav ul li {
+    float: left;
+}
+.nav ul li#KeCheng {     /* 利用中间 “课程” li 框的外边距设置 还原三个 li 框之间的实际距离 */
+    margin-left: 28px;                  
+    margin-right: 24px;
+}
+.nav ul li a {
+    display: block;          /* a链接是行内元素 没有上下高度，需要转换成块级元素 */
+    height: 42px;
+    padding: 0 10px;         /* 文本 与 文本框的距离 内边距 */
+    line-height: 42px;       /* 文字居中 */
+    font-size: 18px;
+    color: #050505;
+    letter-spacing: 0.1em;   /* ps 中的字间距 是 va 为单位的，va = em*1000  100va = 0em */
+}
+.nav ul li a:hover {
+    border-bottom: 2px solid #00a4ff;
+    color: #00a4ff;
+}
+
+/* search搜索模块 */
+.search {
+    float: left;                        /*布局定位属性*/
+
+    margin-left: 84px;                  /*自身属性*/
+    width: 411px;
+    height: 40px;
+    background-color:#00a4ff;
+}
+.search input#searchBox1 {    
+    float: left;         
+    /* width: 360px; */
+    width: 344px;                      /*设定了文本框内文字的 padding 内边距后 要减去*/
+    height: 38px;
+    border: 1px solid #00a4ff;
+    border-right: none;
+    color: #bfbfbf;
+    font-size: 14px;
+    padding-left: 16px;
+}
+.search button {
+    float: left;
+    /* position: fixed; */
+    width: 47px;                    /*如果太大了，搜索模块的box放不下，就会挤到下面 */
+    height: 40px;
+    background: url(images/search.png) no-repeat top center; 
+    border: 0;                        /* 按钮button默认有个边框需要我们手动去掉 */
+}
+/* 用户信息模块 */
+.user {
+    float: left;
+    margin-left: 30px;
+    line-height: 42px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* ------------------------------------Banner横幅区域-------------------------------- */
+.banner {
+    height: 420px;
+    background-color: #1c036c;
+}
+/* 版心模块 */
+.banner .w {
+    height: 420px;
+    background: url(images/banner2.png) no-repeat top center;
+}
+/* 左边透明模块 */
+.subnav {
+    width: 190px;
+    height: 420px;
+    background:rgba( 0, 0, 0, 0.3);
+}
+.subnav ul li {
+    height: 44px;
+    line-height: 44px; 
+    padding-left: 20px;
+}
+.subnav ul li#banner_w_subnav_liStart {
+    padding-top: 13px;
+}
+
+
+.subnav ul li a{
+    font-size: 14px;
+    color: #fff;
+}

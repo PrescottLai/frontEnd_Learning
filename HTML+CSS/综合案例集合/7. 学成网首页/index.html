@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学成网首页</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 5.4页面布局整体思路
+    为了提高网页制作的效率,布局时通常有以下的整体思路: 
+    1.必须确定页面的版心(可视区的“宽度”“高度”等) , 我们测量可得知。
+    2.分析页面中的行模块,以及每个行模块中的列模块。其实页面布局第一准则.
+    3.一行中的列模块经常浮动布局,先确定每个列的大小，之后确定列的位置.页面布局第二.准则
+    4.制作HTML结构。我们还是遵循,先有结构,后有样式的原则。结构永远最重要.
+    5.所以,先理清楚布局结构,再写代码尤为重要这需要我们多写多积累 -->
+
+</head>
+
+
+<body>
+    <!-- 
+    ●1 号是版心盒子header 1200* 42的盒子水平居中对齐,
+     上下给一个margin值就可以
+    ●版心盒子里面包含2 号盒子logo
+    ●版心盒子里面包含3号盒子nav导航栏
+    ●版心盒子里面包含4号盒子search搜索框
+    ●版心盒子里面包含5号盒子user个人信息
+    ●注意:要求里面的4个盒子必须都是浮动 -->
+
+    <!-- 头部模块开始 -->
+    <div class="header w">
+        <!-- logo部分 -->
+        <div class="logo">
+            <img src="images/logo.png" alt="学成在线logo">
+        </div>
+
+        <!-- 导航栏nav部分，实际开发中，我们不会直接用链接a而是用li 包含链接（li+a）的做法 -->
+        <div class="nav">
+            <ul>
+                <li id="ShouYe"><a href="#">首页</a></li>
+                <li id="KeCheng"><a href="#">课程</a></li>
+                <li id="ZhiYeGuiHua"><a href="#">职业规划</a></li>
+            </ul>
+            <!-- 无序列表包含小li包含小a，导航栏通用写法：uv>li>a -->
+        </div>
+
+        <!-- 搜索模块 -->
+        <div class="search">
+            <input id="searchBox1" type="text" value="输入关键词">
+            <!--id 必须写在前面才有用-->
+            <button></button>
+        </div>
+
+        <!-- userg个人信息头像 -->
+        <div class="user">
+            <img src="images/user_icon.png" alt="用户头像图">
+            qq-leishui
+        </div>
+    </div>
+    <!-- 头部模块结束 -->
+
+    <!-- banner部分开始 -->
+    <div class="banner">
+        <!-- 版心 -->
+        <div class="w">
+            <div class="subnav">
+                <ul>
+                    <li id="banner_w_subnav_liStart"><a href="#">前端开发</a></li>
+                    <li><a href="#">后端开发</a></li>
+                    <li><a href="#">移动开发</a></li>
+                    <li><a href="#">人工智能</a></li>
+                    <li><a href="#">商业预测</a></li>
+                    <li><a href="#">云计算&大数据</a></li>
+                    <li><a href="#">运维&从测试</a></li>
+                    <li><a href="#">UI设计</a></li>
+                    <li id="banner_w_subnav_liEnd"><a href="#">产品</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- banner部分结束 -->
+
+</body>
+
+</html>
