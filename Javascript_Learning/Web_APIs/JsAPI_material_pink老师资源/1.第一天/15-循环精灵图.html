@@ -11,17 +11,17 @@
             margin: 0;
             padding: 0;
         }
-        
+
         li {
             list-style-type: none;
         }
-        
+
         .box {
             width: 250px;
             margin: 100px auto;
         }
-        
-        .box li {
+
+        .box li a {
             float: left;
             width: 24px;
             height: 24px;
@@ -35,27 +35,33 @@
 <body>
     <div class="box">
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
         </ul>
+
     </div>
     <script>
-        // 1. 获取元素 所有的小li 
-        var lis = document.querySelectorAll('li');
-        for (var i = 0; i < lis.length; i++) {
+        // 1. 获取元素 box 里面 所有的小li 
+        var lis = document.querySelector( ".box" ).querySelectorAll( 'li' );
+        // var lis = document.querySelectorAll( 'li' );
+        console.log( lis );
+        var ass = document.querySelectorAll( 'a' );
+        console.log( ass );
+        for ( var i = 0; i < ass.length; i++ ) {
             // 让索引号 乘以 44 就是每个li 的背景y坐标  index就是我们的y坐标
             var index = i * 44;
-            lis[i].style.backgroundPosition = '0 -' + index + 'px';
+            ass[ i ].style.backgroundPosition = '0 -' + index + 'px';
+            console.log( ass[ i ].style.backgroundPosition );
         }
     </script>
 </body>
