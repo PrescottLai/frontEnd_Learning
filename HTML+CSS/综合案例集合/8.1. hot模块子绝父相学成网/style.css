@@ -1,0 +1,645 @@
+/* 
+    1.布局定位属性：display/position/float/clear/visibility/overflow(建议display第一个写，毕竟关系到模式) 
+    2.自身属性：width/height/margin/padding/border/background 
+    3.文本属性：color/font/text-decoration/text-align/vertical-align/white-space/break-word 
+    4.其他属性： content/cursor/boder-radius/box-shadow/text-shadow/backgrond:linear-gradient... 
+ */
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background-color: #F3F5F7;
+}
+
+/* 确定板心的宽度 ps f8查看选框像素*/
+/* 建立一个类方便后面需要用版心尺寸的盒子调用 */
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+/* 所有 li 里面的图片都自适应宽度 */
+.w li>img {
+    width: 100%;
+}
+
+/* 清除所有 li 元素的 自带 style，比如·/123 */
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 所有“高级”字眼的颜色 */
+span#GaoJi {
+    color: #ff7c2d;
+    font-size: 14px;
+}
+
+/* 清除浮动 */
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+span#learnerNum {
+    font-size: 12px;
+    color: #b8b8b8;
+}
+
+/* ------------------------------------Header头部区域-------------------------------- */
+.header {
+    height: 42px;
+    /* background-color: pink; */
+    /* 
+    上下一样 30px 左右不用，但也要给个auto居中对齐，
+    因为上面 .w 已经给了一个 margin，
+    如果不设置左右，就会覆盖掉.w里面的margin，
+    上下左右都是30px了。 
+    */
+    margin: 30px auto;
+
+}
+
+/* logo部分 */
+.logo {
+    float: left;
+    width: 195px;
+    height: 42px;
+    /* background-color: white; */
+}
+
+/* 导航栏部分 */
+.nav {
+    margin-left: 70px;
+    float: left;
+}
+
+.nav ul li {
+    float: left;
+}
+
+.nav ul li#KeCheng {
+    /* 利用中间 “课程” li 框的外边距设置 还原三个 li 框之间的实际距离 */
+    margin-left: 28px;
+    margin-right: 24px;
+}
+
+.nav ul li a {
+    display: block;
+    /* a链接是行内元素 没有上下高度，需要转换成块级元素 */
+    height: 42px;
+    padding: 0 10px;
+    /* 文本 与 文本框的距离 内边距 */
+    line-height: 42px;
+    /* 文字居中 */
+    font-size: 18px;
+    color: #050505;
+    letter-spacing: 0.1em;
+    /* ps 中的字间距 是 va 为单位的，va = em*1000  100va = 0em */
+}
+
+.nav ul li a:hover {
+    border-bottom: 2px solid #00a4ff;
+    color: #00a4ff;
+}
+
+/* search搜索模块 */
+.search {
+    float: left;
+    /*布局定位属性*/
+
+    margin-left: 84px;
+    /*自身属性*/
+    width: 411px;
+    height: 40px;
+    background-color: #00a4ff;
+}
+
+.search input {
+    float: left;
+    /* width: 360px; */
+    width: 344px;
+    /*设定了文本框内文字的 padding 内边距后 要减去*/
+    height: 38px;
+    border: 1px solid #00a4ff;
+    border-right: none;
+    color: #bfbfbf;
+    font-size: 14px;
+    padding-left: 16px;
+}
+
+.search button {
+    float: left;
+    /* position: fixed; */
+    width: 47px;
+    /*如果太大了，搜索模块的box放不下，就会挤到下面 */
+    height: 40px;
+    background: url(images/search.png) no-repeat top center;
+    border: 0;
+    /* 按钮button默认有个边框需要我们手动去掉 */
+}
+
+/* 用户信息模块 */
+.user {
+    float: left;
+    margin-left: 30px;
+    line-height: 42px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* ------------------------------------Banner横幅区域-------------------------------- */
+.banner {
+    height: 420px;
+    background-color: #1c036c;
+}
+
+/* 版心模块 */
+.banner .w {
+    height: 420px;
+    background: url(images/banner2.png) no-repeat top center;
+}
+
+/* 左边透明模块 */
+.subnav {
+    float: left;
+    width: 190px;
+    height: 420px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.subnav ul li {
+    height: 44px;
+    line-height: 44px;
+    padding-left: 20px;
+}
+
+.subnav ul li .banner_w_subnav_liStart {
+    padding-top: 13px;
+}
+
+.subnav ul li a {
+    font-size: 14px;
+    /*一般情况下，px是横竖都一样，但ps中图片有可能横竖不一样*/
+    color: #fff;
+}
+
+.subnav ul li a:hover {
+    color: #00b4ff;
+}
+
+.subnav ul li a span {
+    float: right;
+    padding-right: 18px;
+}
+
+.course {
+    float: right;
+    height: 300px;
+    width: 228px;
+    margin-top: 50px;
+    background-color: white;
+}
+
+.course h2 {
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #9bceea;
+}
+
+.course .bd {
+    padding: 0 18px;
+    height: 252px;
+}
+
+.course .bd ul li h4 {
+    font-weight: 500;
+    font-size: 16px;
+    color: #4f4f4f;
+}
+
+.course .bd ul li p {
+    font-size: 12px;
+    color: #bdbdbd;
+}
+
+.course .bd ul li {
+    padding: 14px 0;
+    border-bottom: 1px solid #bdbdbd;
+}
+
+.course .bd .allCourse {
+    display: block;
+    height: 38px;
+    margin-top: 5px;
+    line-height: 38px;
+    text-align: center;
+    color: #00a4ff;
+    font-size: 17px;
+    font-weight: bold;
+    border: 1px solid #00a4ff;
+}
+
+.course .bd a:hover {
+    color: #1c036c;
+    border-color: #1c036c;
+}
+
+/* 精品推荐栏部分 */
+.goods {
+    margin-top: 8px;
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px 3px rgba(0, 0, 0, 0.1);
+    /* 阴影：x轴偏移（必须），y轴偏移（必须），模糊度，阴影大小，颜色 */
+}
+
+.goods h1 {
+    margin: 0 34px;
+    float: left;
+    line-height: 60px;
+    font-size: 16px;
+    color: #00b4ff;
+}
+
+.goods ul li {
+    text-align: center;
+    float: left;
+}
+
+.goods ul li a {
+    padding: 0 29.5px;
+    line-height: 60px;
+    font-size: 16px;
+    color: black;
+    border-left: 1px solid #bdbdbd;
+
+}
+
+.goods ul li a:hover {
+    padding: 0px 28px;
+    color: #00a4ff;
+    border-left: 2px solid #bdbdbd;
+    border-right: 2px solid #bdbdbd;
+}
+
+.goods .mod {
+    float: right;
+    margin-right: 26px;
+    line-height: 60px;
+}
+
+/*------------------------------------- 精品推荐box部分---------------------------------- */
+/* 头部 */
+.box {
+    margin-top: 26px;
+    /* height: 595px; */
+}
+
+.box .box-hd {
+    height: 40px;
+}
+
+/* 精品推荐h1 */
+.box h1 {
+    float: left;
+    line-height: 40px;
+    font-size: 20px;
+    color: #494949;
+}
+
+/* 查看全部 */
+.box .box-hd a {
+    float: right;
+    margin-right: 31px;
+    margin-top: 14px;
+    font-size: 11px;
+    color: #a5a5a5;
+}
+
+/* 身体（图片，文字 链接） */
+.box .box-bd {
+    margin-top: 10px;
+    height: 555px;
+}
+
+.box .box-bd ul {
+    width: 1215px;
+    /* 把li 的 父亲 ul 设置的足够宽box就不用换行了 */
+}
+
+.box .box-bd ul li {
+    position: relative;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    float: left;
+    width: 228px;
+    height: 270px;
+    background-color: #fff;
+    box-shadow: 0 2px 7px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 精品推荐课程图片 */
+/* .box-bd ul li> img {
+    width: 100%;
+} */
+.box-bd ul li em {
+    position: absolute;
+    top: 4px;
+    right: -4px;
+}
+
+/* Think PHP 5.0 博客系统实战项目训练 */
+.box-bd ul li a {
+    display: block;
+    width: 188px;
+    margin: 22px 20px 20px 24px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+
+.box-bd ul li a p {
+    margin-bottom: 11px;
+}
+
+.box-bd ul li a:hover {
+    color: #00a4ff;
+}
+
+/* -----------编程入门box--------------- */
+.box2 {
+    margin-top: 38px;
+}
+
+.box2-hd {
+    height: 40px;
+}
+
+/* 编程入门 */
+.box2-hd h1 {
+    float: left;
+    line-height: 30px;
+    font-size: 20px;
+    color: #494949;
+}
+
+.box2-hd ul {
+    float: left;
+    margin-left: 276px;
+}
+
+.box2-hd ul li {
+    margin-top: 4px;
+    float: left;
+    margin-left: 95px;
+}
+
+/* 热门 初级 中级 高级 */
+.box2-hd ul li a {
+    font-size: 14px;
+    color: #868686;
+}
+
+/* 查看全部 */
+.box2-hd a#right_a {
+    float: right;
+    margin-right: 31px;
+    margin-top: 14px;
+    font-size: 11px;
+    color: #a5a5a5;
+}
+
+.box2-bd {
+    height: 300px;
+}
+
+/* PHP入门图 */
+.box2-bd .boxLeft {
+    float: left;
+    width: 228px;
+}
+
+
+
+.box2-bd .boxRight {
+    float: left;
+    height: 300px;
+}
+
+/* 快乐编程就用 Python */
+.box2-bd .boxRight .hd {
+    margin-bottom: 17px;
+    margin-left: 15px;
+}
+
+
+.box2-bd .boxRight .bd ul li {
+    float: left;
+    margin-left: 15px;
+    height: 270px;
+    width: 228px;
+    background-color: white;
+    box-shadow: 0 2px 7px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 四张图 */
+.box2-bd .boxRight .bd ul li a img {
+    width: 100%;
+}
+
+/* Android Hybrid APP开发实战H5+原生! */
+.box2-bd .boxRight .bd ul li a p {
+    width: 188px;
+    margin: 22px 20px 5px 20px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+
+/* 高级 */
+.box2-bd .boxRight .bd ul li a span#GaoJi {
+    margin-left: 20px;
+}
+
+.box2-bd .boxRight .bd ul li a p:hover {
+    color: #00a4ff;
+}
+
+/* 数据分析师 */
+.box3 {
+    margin-top: 38px;
+}
+
+.box3-hd {
+    height: 40px;
+}
+
+.box3-hd h1 {
+    float: left;
+    line-height: 30px;
+    font-size: 20px;
+    color: #494949;
+}
+
+.box3-hd ul {
+    float: left;
+    margin-left: 276px;
+}
+
+.box3-hd ul li {
+    margin-top: 4px;
+    float: left;
+    margin-left: 95px;
+}
+
+/* 热门 初级 中级 高级 */
+.box3-hd ul li a {
+    font-size: 14px;
+    color: #868686;
+}
+
+/* 查看全部 */
+.box3-hd a#right_a {
+    float: right;
+    margin-right: 31px;
+    margin-top: 14px;
+    font-size: 11px;
+    color: #a5a5a5;
+}
+
+.box3-bd {
+    height: 300px;
+}
+
+/* PHP入门图 */
+.box3-bd .boxLeft {
+    float: left;
+    width: 228px;
+}
+
+
+
+.box3-bd .boxRight {
+    float: left;
+    height: 300px;
+}
+
+/*Python + 人工智能 */
+.box3-bd .boxRight .hd {
+    margin-bottom: 17px;
+    margin-left: 15px;
+}
+
+
+.box3-bd .boxRight .bd ul li {
+    float: left;
+    margin-left: 15px;
+    height: 270px;
+    width: 228px;
+    background-color: white;
+    box-shadow: 0 2px 7px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 四张图 */
+.box3-bd .boxRight .bd ul li a img {
+    width: 100%;
+}
+
+/* Kami2首页界面切换效果 */
+.box3-bd .boxRight .bd ul li a p {
+    width: 188px;
+    margin: 22px 20px 5px 20px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+
+/* 高级 */
+.box3-bd .boxRight .bd ul li a span#GaoJi {
+    margin-left: 20px;
+}
+
+.box3-bd .boxRight .bd ul li a p:hover {
+    color: #00a4ff;
+}
+
+/* --------结尾--------- */
+.footer {
+    margin-top: 40px;
+    height: 250px;
+    background-color: #fff;
+}
+
+.footer .w {
+    padding-top: 32px;
+
+}
+
+.copyright {
+    float: left;
+}
+
+.copyright p {
+    font-size: 12px;
+    color: #666;
+    margin: 20px 0 15px 0;
+}
+
+.copyright .app {
+    display: block;
+    width: 118px;
+    height: 33px;
+    border: 1px solid #00a4ff;
+
+    text-align: center;
+    line-height: 33px;
+    color: #00a4ff;
+    font-size: 16px;
+}
+
+.copyright .app:hover {
+    filter: contrast(2)
+}
+
+.link {
+    float: right
+}
+
+.link dl {
+    float: left;
+    margin-left: 100px;
+}
+
+.link dl dt {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+.link dl dd a {
+    color: #333;
+    font-size: 12px;
+}
+
+.link dl dd a:hover {
+    border-bottom: 1px solid #00b4ff;
+    color: #00a4ff
+}

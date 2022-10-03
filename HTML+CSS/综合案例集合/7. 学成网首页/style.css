@@ -12,7 +12,6 @@
 
 body {
     background-color: #F3F5F7;
-    height: 3000px;
 }
 
 /* 确定板心的宽度 ps f8查看选框像素*/
@@ -27,8 +26,37 @@ li {
     list-style: none;
 }
 
+.w li>img {
+    width: 100%;
+}
+
 a {
     text-decoration: none;
+}
+
+/* 所有“高级”字眼的颜色 */
+span#GaoJi {
+    color: #ff7c2d;
+    font-size: 14px;
+}
+
+/* 清除浮动 */
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+span#learnerNum {
+    font-size: 12px;
+    color: #b8b8b8;
 }
 
 /* ------------------------------------Header头部区域-------------------------------- */
@@ -281,13 +309,14 @@ a {
 /* 头部 */
 .box {
     margin-top: 26px;
-    height: 595px;
+    /* height: 595px; */
 }
 
 .box .box-hd {
     height: 40px;
 }
 
+/* 精品推荐h1 */
 .box h1 {
     float: left;
     line-height: 40px;
@@ -295,6 +324,7 @@ a {
     color: #494949;
 }
 
+/* 查看全部 */
 .box .box-hd a {
     float: right;
     margin-right: 31px;
@@ -324,10 +354,12 @@ a {
     box-shadow: 0 2px 7px 3px rgba(0, 0, 0, 0.1);
 }
 
+/* 精品推荐课程图片 */
 .box-bd ul li img {
     width: 100%;
 }
 
+/* Think PHP 5.0 博客系统实战项目训练 */
 .box-bd ul li a {
     display: block;
     width: 188px;
@@ -341,10 +373,266 @@ a {
     margin-bottom: 11px;
 }
 
-.box-bd ul li a span {
-    color: #ff7c2d;
-}
-
 .box-bd ul li a:hover {
     color: #00a4ff;
+}
+
+/* -----------编程入门box--------------- */
+.box2 {
+    margin-top: 38px;
+}
+
+.box2-hd {
+    height: 40px;
+}
+
+/* 编程入门 */
+.box2-hd h1 {
+    float: left;
+    line-height: 30px;
+    font-size: 20px;
+    color: #494949;
+}
+
+.box2-hd ul {
+    float: left;
+    margin-left: 276px;
+}
+
+.box2-hd ul li {
+    margin-top: 4px;
+    float: left;
+    margin-left: 95px;
+}
+
+/* 热门 初级 中级 高级 */
+.box2-hd ul li a {
+    font-size: 14px;
+    color: #868686;
+}
+
+/* 查看全部 */
+.box2-hd a#right_a {
+    float: right;
+    margin-right: 31px;
+    margin-top: 14px;
+    font-size: 11px;
+    color: #a5a5a5;
+}
+
+.box2-bd {
+    height: 300px;
+}
+
+/* PHP入门图 */
+.box2-bd .boxLeft {
+    float: left;
+    width: 228px;
+}
+
+
+
+.box2-bd .boxRight {
+    float: left;
+    height: 300px;
+}
+
+/* 快乐编程就用 Python */
+.box2-bd .boxRight .hd {
+    margin-bottom: 17px;
+    margin-left: 15px;
+}
+
+
+.box2-bd .boxRight .bd ul li {
+    float: left;
+    margin-left: 15px;
+    height: 270px;
+    width: 228px;
+    background-color: white;
+    box-shadow: 0 2px 7px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 四张图 */
+.box2-bd .boxRight .bd ul li a img {
+    width: 100%;
+}
+
+/* Android Hybrid APP开发实战H5+原生! */
+.box2-bd .boxRight .bd ul li a p {
+    width: 188px;
+    margin: 22px 20px 5px 20px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+
+/* 高级 */
+.box2-bd .boxRight .bd ul li a span#GaoJi {
+    margin-left: 20px;
+}
+
+.box2-bd .boxRight .bd ul li a p:hover {
+    color: #00a4ff;
+}
+
+/* 数据分析师 */
+.box3 {
+    margin-top: 38px;
+}
+
+.box3-hd {
+    height: 40px;
+}
+
+.box3-hd h1 {
+    float: left;
+    line-height: 30px;
+    font-size: 20px;
+    color: #494949;
+}
+
+.box3-hd ul {
+    float: left;
+    margin-left: 276px;
+}
+
+.box3-hd ul li {
+    margin-top: 4px;
+    float: left;
+    margin-left: 95px;
+}
+
+/* 热门 初级 中级 高级 */
+.box3-hd ul li a {
+    font-size: 14px;
+    color: #868686;
+}
+
+/* 查看全部 */
+.box3-hd a#right_a {
+    float: right;
+    margin-right: 31px;
+    margin-top: 14px;
+    font-size: 11px;
+    color: #a5a5a5;
+}
+
+.box3-bd {
+    height: 300px;
+}
+
+/* PHP入门图 */
+.box3-bd .boxLeft {
+    float: left;
+    width: 228px;
+}
+
+
+
+.box3-bd .boxRight {
+    float: left;
+    height: 300px;
+}
+
+/*Python + 人工智能 */
+.box3-bd .boxRight .hd {
+    margin-bottom: 17px;
+    margin-left: 15px;
+}
+
+
+.box3-bd .boxRight .bd ul li {
+    float: left;
+    margin-left: 15px;
+    height: 270px;
+    width: 228px;
+    background-color: white;
+    box-shadow: 0 2px 7px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 四张图 */
+.box3-bd .boxRight .bd ul li a img {
+    width: 100%;
+}
+
+/* Kami2首页界面切换效果 */
+.box3-bd .boxRight .bd ul li a p {
+    width: 188px;
+    margin: 22px 20px 5px 20px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+
+/* 高级 */
+.box3-bd .boxRight .bd ul li a span#GaoJi {
+    margin-left: 20px;
+}
+
+.box3-bd .boxRight .bd ul li a p:hover {
+    color: #00a4ff;
+}
+
+/* --------结尾--------- */
+.footer {
+    margin-top: 40px;
+    height: 250px;
+    background-color: #fff;
+}
+
+.footer .w {
+    padding-top: 32px;
+
+}
+
+.copyright {
+    float: left;
+}
+
+.copyright p {
+    font-size: 12px;
+    color: #666;
+    margin: 20px 0 15px 0;
+}
+
+.copyright .app {
+    display: block;
+    width: 118px;
+    height: 33px;
+    border: 1px solid #00a4ff;
+
+    text-align: center;
+    line-height: 33px;
+    color: #00a4ff;
+    font-size: 16px;
+}
+
+.copyright .app:hover {
+    filter: contrast(2)
+}
+
+.link {
+    float: right
+}
+
+.link dl {
+    float: left;
+    margin-left: 100px;
+}
+
+.link dl dt {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+.link dl dd a {
+    color: #333;
+    font-size: 12px;
+}
+
+.link dl dd a:hover {
+    border-bottom: 1px solid #00b4ff;
+    color: #00a4ff
 }

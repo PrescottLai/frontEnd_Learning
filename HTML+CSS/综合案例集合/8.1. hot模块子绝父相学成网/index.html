@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学成网首页</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 5.4页面布局整体思路
+    为了提高网页制作的效率,布局时通常有以下的整体思路: 
+    1.必须确定页面的版心(可视区的“宽度”“高度”等) , 我们测量可得知。
+    2.分析页面中的行模块,以及每个行模块中的列模块。其实页面布局第一准则.
+    3.一行中的列模块经常浮动布局,先确定每个列的大小，之后确定列的位置.页面布局第二.准则
+    4.制作HTML结构。我们还是遵循,先有结构,后有样式的原则。结构永远最重要.
+    5.所以,先理清楚布局结构,再写代码尤为重要这需要我们多写多积累 -->
+
+</head>
+
+
+<body>
+    <!-- 
+    ●1 号是版心盒子header 1200* 42的盒子水平居中对齐,
+     上下给一个margin值就可以
+    ●版心盒子里面包含2 号盒子logo
+    ●版心盒子里面包含3号盒子nav导航栏
+    ●版心盒子里面包含4号盒子search搜索框
+    ●版心盒子里面包含5号盒子user个人信息
+    ●注意:要求里面的4个盒子必须都是浮动 -->
+
+    <!-- 头部模块开始 -->
+    <div class="header w">
+        <!-- logo部分 -->
+        <div class="logo">
+            <img src="images/logo.png" alt="学成在线logo">
+        </div>
+
+        <!-- 导航栏nav部分，实际开发中，我们不会直接用链接a而是用li 包含链接（li+a）的做法 -->
+        <div class="nav">
+            <ul>
+                <li id="ShouYe"><a href="#">首页</a></li>
+                <li id="KeCheng"><a href="#">课程</a></li>
+                <li id="ZhiYeGuiHua"><a href="#">职业规划</a></li>
+            </ul>
+            <!-- 无序列表包含小li包含小a，导航栏通用写法：uv>li>a -->
+        </div>
+
+        <!-- 搜索模块 -->
+        <div class="search">
+            <input class='input' type="text" value="输入关键词">
+            <!--id 必须写在前面才有用-->
+            <button></button>
+        </div>
+
+        <!-- userg个人信息头像 -->
+        <div class="user">
+            <img src="images/user_icon.png" alt="用户头像图">
+            qq-leishui
+        </div>
+    </div>
+    <!-- 头部模块结束 -->
+
+    <!-- banner部分开始 -->
+    <div class="banner">
+        <!-- 版心 -->
+        <div class="w">
+            <!-- 左边链接 -->
+            <div class="subnav">
+                <ul>
+                    <li class="banner_w_subnav_liStart"><a href="#">前端开发 <span>&gt; </span></a></li>
+                    <li><a href="#">后端开发 <span>&gt; </span></a></li>
+                    <li><a href="#">移动开发 <span>&gt; </span></a></li>
+                    <li><a href="#">人工智能 <span>&gt; </span></a></li>
+                    <li><a href="#">商业预测 <span>&gt; </span></a></li>
+                    <li><a href="#">云计算&大数据 <span>&gt; </span></a></li>
+                    <li><a href="#">运维&从测试 <span>&gt; </span></a></li>
+                    <li><a href="#">UI设计<span>&gt; </span></a></li>
+                    <li class="banner_w_subnav_liEnd"><a href="#">产品 <span>&gt; </span></a></li>
+                </ul>
+            </div>
+            <!-- 右边课程表 -->
+            <div class="course">
+                <h2>我的课程表</h2>
+                <div class="bd">
+                    <ul>
+                        <li>
+                            <h4>继续学习 程序语言设计</h4>
+                            <p>正在学习-使用对象</p>
+                        </li>
+                        <li>
+                            <h4>继续学习 程序语言设计</h4>
+                            <p>正在学习-使用对象</p>
+                        </li>
+                        <li>
+                            <h4>继续学习 程序语言设计</h4>
+                            <p>正在学习-使用对象</p>
+                        </li>
+                    </ul>
+                    <a href="#" class="allCourse">全部课程</a>
+                </div>
+            </div>
+            <!-- 背景图更换按钮 -->
+            <!-- 待做 -->
+        </div>
+    </div>
+    <!-- banner部分结束 -->
+
+    <!-- 精品推荐栏开始 -->
+    <div class="goods w">
+        <h1>精品推荐</h1>
+        <ul>
+            <li><a href="#">jQuery</a></li>
+            <li><a href="#">Spark</a></li>
+            <li><a href="#">MySQL</a></li>
+            <li><a href="#">JavaWeb</a></li>
+            <li><a href="#">MySQL</a></li>
+            <li><a href="#">Python</a></li>
+        </ul>
+        <a href="#" class="mod">修改兴趣</a>
+    </div>
+    <!-- 精品推荐栏结束 -->
+
+    <!-- 精品推荐box开始 -->
+    <div class="box w clearfix">
+        <div class="box-hd">
+            <h1>精品推荐</h1>
+            <a href="#" class="All">查看全部</a>
+        </div>
+        <div class="box-bd">
+            <ul>
+                <li>
+                    <em>
+                        <img src="images/hot.png" alt="hot_pic">
+                    </em>
+                    <img src="images/pic1.png " alt="">
+                    <a href="javascript:;">
+                        <p>Think PHP 5.0 博客系统实战</p>
+                        <p>项目演练</p>
+                        <span id="GaoJi">高级</span> <span id="learnerNum">· 1123人在学习</span>
+                    </a>
+                </li>
+                <li>
+                    <img src="images/pic2.png " alt="">
+                    <a href="javascript:;">
+                        <p>Think PHP 5.0 博客系统实战</p>
+                        <p>项目演练</p>
+                        <span id="GaoJi">高级</span> <span id="learnerNum">· 1125人在学习</span>
+                    </a>
+                </li>
+                <li>
+                    <em>
+                        <img src="images/hot.png" alt="hot_pic">
+                    </em>
+                    <img src="images/pic3.png " alt="">
+                    <a href="javascript:;">
+                        <p>Think PHP 5.0 博客系统实战</p>
+                        <p>项目演练</p>
+                        <span id="GaoJi">高级</span> <span id="learnerNum">· 1125人在学习</span>
+                    </a>
+                </li>
+                <li>
+                    <img src="images/pic4.png " alt="">
+                    <a href="javascript:;">
+                        <p>Think PHP 5.0 博客系统实战</p>
+                        <p>项目演练</p>
+                        <span id="GaoJi">高级</span> <span id="learnerNum">· 1125人在学习</span>
+                    </a>
+                </li>
+                <li>
+                    <img src="images/pic5.png " alt="">
+                    <a href="javascript:;">
+                        <p>Think PHP 5.0 博客系统实战</p>
+                        <p>项目演练</p>
+                        <span id="GaoJi">高级</span> <span id="learnerNum">· 1125人在学习</span>
+                    </a>
+                </li>
+                <li>
+                    <img src="images/pic1.png " alt="">
+                    <a href="javascript:;">
+                        <p>Think PHP 5.0 博客系统实战</p>
+                        <p>项目演练</p>
+                        <span id="GaoJi">高级</span> <span id="learnerNum">· 1125人在学习</span>
+                    </a>
+                </li>
+                <li>
+                    <img src="images/pic2.png " alt="">
+                    <a href="javascript:;">
+                        <p>Think PHP 5.0 博客系统实战</p>
+                        <p>项目演练</p>
+                        <span id="GaoJi">高级</span> <span id="learnerNum">· 1125人在学习</span>
+                    </a>
+                </li>
+                <li>
+                    <img src="images/pic3.png " alt="">
+                    <a href="javascript:;">
+                        <p>Think PHP 5.0 博客系统实战</p>
+                        <p>项目演练</p>
+                        <span id="GaoJi">高级</span> <span id="learnerNum">· 1125人在学习</span>
+                    </a>
+                </li>
+                <li>
+                    <img src="images/pic4.png " alt="">
+                    <a href="javascript:;">
+                        <p>Think PHP 5.0 博客系统实战</p>
+                        <p>项目演练</p>
+                        <span id="GaoJi">高级</span> <span id="learnerNum">· 1125人在学习</span>
+                    </a>
+                </li>
+                <li>
+                    <img src="images/pic5.png " alt="">
+                    <a href="javascript:;">
+                        <p>Think PHP 5.0 博客系统实战</p>
+                        <p>项目演练</p>
+                        <span id="GaoJi">高级</span> <span id="learnerNum">· 1125人在学习</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <!-- 编程入门box开始 -->
+    <div class="box2 w clearfix">
+        <div class="box2-hd">
+            <h1>编程入门</h1>
+            <ul>
+                <li><a href=" javascript:;">热门</a></li>
+                <li><a href="javascript:;">初级</a></li>
+                <li><a href="javascript:;">中级</a></li>
+                <li><a href="javascript:;">高级</a></li>
+            </ul>
+            <a id='right_a' href="javascript:;">查看全部</a>
+        </div>
+        <div class="box2-bd">
+            <div class="boxLeft">
+                <img src="images/PHP入门.png" alt="PHP入门pic">
+            </div>
+            <div class="boxRight">
+                <div class="hd">
+                    <img src="images/图层 155.png" alt="">
+                </div>
+                <div class="bd">
+                    <ul>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/图层 145.png" alt="">
+                                <p>Android Hybrid APP开发实战H5+原生!</p>
+                                <span id="GaoJi">高级</span> <span id="learnerNum">·1125人在学习</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/图层 146.png" alt="">
+                                <p>Android Hybrid APP开发实战H5+原生!</p>
+                                <span id="GaoJi">高级</span> <span id="learnerNum">·1125人在学习</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/图层 143.png" alt="">
+                                <p>Android Hybrid APP开发实战H5+原生!</p>
+                                <span id="GaoJi">高级</span> <span id="learnerNum">·1125人在学习</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/图层 144.png" alt="">
+                                <p>Android Hybrid APP开发实战H5+原生!</p>
+                                <span id="GaoJi">高级</span> <span id="learnerNum">·1125人在学习</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 编程入门box结束 -->
+
+    <!-- 数据分析师开始 -->
+    <div class="box3 w clearfix">
+        <div class="box3-hd">
+            <h1>编程入门</h1>
+            <ul>
+                <li><a href="javascript:;">热门</a></li>
+                <li><a href="javascript:;">初级</a></li>
+                <li><a href="javascript:;">中级</a></li>
+                <li><a href="javascript:;">高级</a></li>
+            </ul>
+            <a id='right_a' href="javascript:;">查看全部</a>
+        </div>
+        <div class="box3-bd">
+            <div class="boxLeft">
+                <img src="images/PHP入门2.png" alt="PHP入门pic">
+            </div>
+            <div class="boxRight">
+                <div class="hd">
+                    <img src="images/python+人工智能.png" alt="">
+                </div>
+                <div class="bd">
+                    <ul>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/图层 146.png" alt="">
+                                <p>Kami2首页界面切换效果</p><br>
+                                <span id="GaoJi">高级</span> <span id="learnerNum">·1125人在学习</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/图层 145.png" alt="">
+                                <p>Android Hybrid APP开发实战H5+原生!</p>
+                                <span id="GaoJi">高级</span> <span id="learnerNum">·1125人在学习</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/图层 144.png" alt="">
+                                <p>Cocos2d-x 引擎源码中的纹理优化 </p>
+                                <span id="GaoJi">高级</span> <span id="learnerNum">·1125人在学习</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="images/图层 143.png" alt="">
+                                <p>Android Hybrid APP开发实战H5+原生!</p>
+                                <span id="GaoJi">高级</span> <span id="learnerNum">·1125人在学习</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 数据分析师结束 -->
+
+    <!-- 结尾 -->
+    <div class="footer">
+        <div class="w">
+            <div class="copyright">
+                <img src="images/logo.png" alt="">
+                <p>学成在线致力于普及中国最好的教育它与中国一流大学和机构合作提供在线课程。<br> © 2017年XTCG Inc.保留所有权利。-沪ICP备15025210号</p>
+                <a href="javascript:;" class="app">下载app</a>
+            </div>
+            <div class="link">
+                <dl>
+                    <dt>关于学生网</dt>
+                    <dd><a href="javascript:;">关于</a></dd>
+                    <dd><a href="javascript:;">管理团队</a></dd>
+                    <dd><a href="javascript:;">工作机会</a></dd>
+                    <dd><a href="javascript:;">客户服务</a></dd>
+                    <dd><a href="javascript:;">帮助</a></dd>
+                </dl>
+                </dl>
+                <dl>
+                    <dt>新手指南</dt>
+                    <dd><a href="javascript:;">如何注册</a></dd>
+                    <dd><a href="javascript:;">如何选课</a></dd>
+                    <dd><a href="javascript:;">如何拿到毕业证</a></dd>
+                    <dd><a href="javascript:;">学分是什么</a></dd>
+                    <dd><a href="javascript:;">考试未通过怎么办</a></dd>
+                </dl>
+                </dl>
+                <dl>
+                    <dt>合作伙伴</dt>
+                    <dd><a href="javascript:;">合作机构</a></dd>
+                    <dd><a href="javascript:;">合作导师</a></dd>
+                </dl>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <!-- 结尾 -->
+    <script>
+        // 热门 初级 中级 高级 排他思想 改变颜色
+        var box2_hd = document.querySelector( '.box2-hd' );
+        var box2_hd_li_a = box2_hd.querySelector( 'ul' ).querySelectorAll( 'a' );
+        console.log( box2_hd_li_a );
+        box2_hd_li_a[ 0 ].style.color = '#00a4ff';
+        for ( var i = 0; i < box2_hd_li_a.length; i++ ) {
+            box2_hd_li_a[ i ].onmouseover = function () {
+                for ( var i = 0; i < box2_hd_li_a.length; i++ ) {
+                    box2_hd_li_a[ i ].style.color = '#a5a5a5';
+                }
+                console.log( this );
+                this.style.color = '#00a4ff';
+            }
+        }
+        var box3_hd = document.querySelector( '.box3-hd' );
+        var box3_hd_li_a = box3_hd.querySelector( 'ul' ).querySelectorAll( 'a' );
+        console.log( box3_hd_li_a );
+        box3_hd_li_a[ 0 ].style.color = '#00a4ff';
+        for ( var i = 0; i < box3_hd_li_a.length; i++ ) {
+            box3_hd_li_a[ i ].onmouseover = function () {
+                for ( var i = 0; i < box3_hd_li_a.length; i++ ) {
+                    box3_hd_li_a[ i ].style.color = '#a5a5a5';
+                }
+                console.log( this );
+                this.style.color = '#00a4ff';
+            }
+        }
+
+        var ipt = document.querySelector( ".search" ).querySelector( '.input' );
+        console.log( ipt.value );
+        ipt.onfocus = function () {
+            if ( this.value == '输入关键词' ) {
+                console.log( this.value );
+                ipt.value = '';
+            }
+        }
+
+        ipt.onblur = function () {
+            console.log( typeof this.value );
+            if ( this.value.match( /^[\s]*$/ ) ) {
+                console.log( 'match' );
+                ipt.value = '输入关键词';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

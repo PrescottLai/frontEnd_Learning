@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精灵图</title>
+</head>
+<style>
+    .box {
+        position: relative;
+        margin: 300px auto;
+        width: 800px;
+        height: 200px;
+        /* background-color: pink; */
+    }
+
+    .M,
+    .i1,
+    .k,
+    .i2 {
+        position: absolute;
+        background: url(images/abcd.jpg) no-repeat
+    }
+
+    .M:hover,
+    .i1:hover,
+    .k:hover,
+    .i2:hover {
+        filter: brightness(1.2);
+    }
+
+    .M {
+        width: 138px;
+        height: 124px;
+        top: 30px;
+        left: 10px;
+        background-position: -109px -272px;
+    }
+
+
+
+    .i1 {
+        width: 60px;
+        height: 112px;
+        top: 38px;
+        left: 250px;
+        background-position: -328px -140px;
+    }
+
+    .k {
+        width: 105px;
+        height: 113px;
+        top: 35px;
+        left: 400px;
+        background-position: -494px -140px;
+    }
+
+    .i2 {
+        width: 60px;
+        height: 112px;
+        top: 38px;
+        left: 620px;
+        background-position: -328px -140px;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="M"></div>
+        <div class="i1"></div>
+        <div class="k"></div>
+        <div class="i2"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世纪佳缘用户名输入框</title>
+    <link rel="stylesheet" href="整个头部.css">
+</head>
+
+
+<body>
+    <!-- 世纪佳缘 头部 用户名 显示隐藏内容 -->
+    <div class="header w">
+        <div class="logo">
+            <img src="images/logo.png" alt="世纪佳缘logo图">
+            <h2>婚恋网站</h2>
+        </div>
+        <div class="login">
+            <input class="username" type="text" name="username" value=" 邮箱/ID/手机号">
+            <input class="pwd" type="text" name="pwd" value=" 密码">
+            <a href="#">
+                <p>登录</p>
+            </a>
+        </div>
+        <div class="otherLogin">
+            <h4>其他登录</h4>
+
+            <ul class="loginLogo">
+                <li>
+                    <a target="_blank" class="openid_qq"
+                        href="https://www.jiayuan.com/general/t/?forward=qqAware&amp;c=10&amp;p=1"></a>
+                </li>
+                </li>
+                <li><a target="_blank" class="openid_weibo" target="_blank" class
+                        href="https://api.weibo.com/oauth2/authorize?client_id=299049658&redirect_uri=http%3A%2F%2Fwww.jiayuan.com%2Fgeneral%2Ft%2F%3Ffrom%3Dsina&response_type=code###"></a>
+                </li>
+                <li><a target="_blank" class="openid_baidu" target="_blank" class
+                        href="https://openapi.baidu.com/oauth/2.0/authorize?client_id=XxsihGpHU4eEZh2tK7gWPddf&display=page&errmsg=Auth+Login+Sucess&errno=0&redirect_uri=http%3A%2F%2Fwww.jiayuan.com%2Fgeneral%2Ft%2F%3Ffrom%3Dbaidu&response_type=code&scope=&ssnerror=0&state=ba84d420141f20decaee59f5f14430ee&stoken=JUKHbWAiQEUnuWS9u3pl7ADL1mId6qBfeqPf%2BtCmRQ3PmvJhmOGd8Uy9LLf2aP%2FD46SmLc0R%2BH0qlJAy8U3NX7YBp%2FoANSrRUBFg2HCTfXI2CYB53XTiY7a4VbWyMP6QB0d5LRWR9lrIUvvndTX%2FPnlIfSKCO5Usq3%2ByHPdW7lu2%2FraFaegZQXraX8R3ktcP5fapKOgYPai8cFtuggNGqpWLoH4YMt%2FTKahMtLje1%2Bv98ahYpFGNziOoGHTZDz%2FbkZhhPrjreM4QiJ6EZ6KJ3w"></a>
+                </li>
+                <li><a target="_blank" class="openid_weixin"
+                        href="https://open.weixin.qq.com/connect/qrconnect?appid=wx45a2e324fc59fadc&state=05fe3191dc7555ff9580ce57281de284&redirect_uri=http%3A%2F%2Fwww.jiayuan.com%2Fgeneral%2Ft%2F%3Ffrom%3Dwx&response_type=code&scope=snsapi_login"></a>
+                </li>
+            </ul>
+            <ul class="forget">
+                <li>
+                    <a target="_blank"
+                        href="https://login.jiayuan.com/?stolen=international&refrer=https://www.jiayuan.com&host=0">海外用户登录</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://login.jiayuan.com//?stolen=right">忘记密码</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="bd"></div>
+    <script>
+        // var lis_a = document.querySelector( ".loginLogo" ).querySelectorAll( 'a' )
+        // console.log( lis_a );
+
+        var ipt_username = document.querySelector( ".login" ).querySelector( '.username' );
+        console.log( ipt_username.name );
+
+        var ipt_pwd = document.querySelector( ".login" ).querySelector( '.pwd' );
+        console.log( ipt_pwd.name );
+
+        ipt_username.onfocus = function () {
+            if ( this.value == " 邮箱/ID/手机号" ) {
+                this.className = 'username username_iptChg';
+                this.value = '';
+            }
+        }
+        ipt_username.onblur = function () {
+            // 正则表达式判断是否全为空格
+            if ( this.value.match( /^[\s]*$/ ) ) {
+                this.value = ' 邮箱/ID/手机号';
+                this.className = 'username';
+            }
+
+        }
+        ipt_pwd.onfocus = function () {
+            if ( this.value == " 密码" ) {
+                this.className = 'pwd pwdChg';
+                this.value = '';
+                this.type = "password";
+            }
+        }
+        ipt_pwd.onblur = function () {
+            if ( this.value == '' ) {
+                this.value = ' 密码';
+                this.className = 'pwd';
+                this.type = "text";
+            }
+
+        }
+        // 其他登录的循环精灵图
+        // 1. 获取元素 .loginLogo 里面 所有的小a 
+        var ass = document.querySelector( ".loginLogo" ).querySelectorAll( 'a' );
+        console.log( ass );
+        for ( var i = 0; i < ass.length; i++ ) {
+            // 让索引号 乘以 44 就是每个li 的背景y坐标  index就是我们的y坐标
+            var index = i * 20;
+            ass[ i ].style.backgroundPosition = '-' + index + 'px 0px';
+            console.log( ass[ i ].style.backgroundPosition );
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下拉菜单</title>
+</head>
+<style>
+    body {
+        background-color: grey;
+    }
+
+    li {
+        text-decoration: none;
+        list-style: none;
+        background-color: rgba(255, 255, 255, 0.508);
+    }
+
+    .box {
+        height: 80px;
+        width: 1200px;
+        background-color: rgba(255, 255, 255);
+    }
+
+    .menu {
+        position: absolute;
+        text-align: center;
+
+
+    }
+
+    .menu ul li {
+        width: 80px;
+        text-align: center;
+        padding: 5px;
+        background-color: rgba(255, 255, 255, 0.547);
+        box-shadow: 2px 2px 3px white;
+        border: 1px solid whitesmoke;
+        border-bottom: 1px solid rgba(255, 166, 0, 0.505);
+    }
+
+    .menu ul li button {
+        width: 80px;
+        text-align: center;
+        padding: 5px;
+        background-color: rgba(255, 255, 255);
+        box-shadow: none;
+        border: none;
+    }
+
+    .menu ul li:hover {
+        background-color: antiquewhite;
+    }
+
+    .menu ul li#weibo:hover {
+        background-color: rgba(255, 255, 255);
+    }
+</style>
+
+<body>
+    <div class="box">Head
+        <div class="menu">
+            <ul>
+                <li id="weibo">
+                    <button>微博</button>
+                </li>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </div>
+
+    </div>
+    <script>
+        var li = document.querySelectorAll( 'li' );
+        console.log( li );
+        var menu = document.querySelector( '.menu' );
+        console.log( menu );
+
+        for ( var i = 1; i < li.length; i++ ) {
+            li[ i ].style.display = 'none';
+        }
+
+        menu.onmouseover = function () {
+            for ( var i = 1; i < li.length; i++ ) {
+                li[ i ].style.display = '';
+            }
+            menu.onmouseout = function () {
+                for ( var i = 1; i < li.length; i++ ) {
+                    li[ i ].style.display = 'none';
+                }
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

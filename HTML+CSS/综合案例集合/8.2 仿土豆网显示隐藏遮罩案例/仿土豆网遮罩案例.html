@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>土豆网遮罩案例</title>
+</head>
+<style>
+    .tudou {
+        position: relative;
+
+        width: 444px;
+        height: 320px;
+        background-color: pink;
+        margin: 30px auto;
+    }
+
+    .tudou img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .cover {
+        position: absolute;
+        display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .4) url(images/arr.png) no-repeat center;
+    }
+
+    .tudou:hover a {
+        display: block;
+    }
+</style>
+
+<body>
+    <div class="tudou">
+        <img src="images/tudou.jpg" alt="土豆网视频pic">
+        <a class='cover' href="javascript:;"></a>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世纪佳缘用户名输入框</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        height: 3000px;
+    }
+
+    .w {
+        width: 1003px;
+        margin: auto;
+
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .header {
+        height: 70px;
+        background-color: white;
+    }
+
+    .header .logo {
+        float: left;
+    }
+
+    .header .logo img {
+        margin-top: 3px;
+        margin-left: 1px;
+        float: left;
+        width: 218px;
+    }
+
+    .header .logo h2 {
+        float: left;
+        line-height: 50px;
+        margin-top: 7.5px;
+        margin-left: 1.7px;
+        margin-right: 35px;
+        padding-left: 14.2px;
+        font-size: 15.7px;
+        color: #c0c0c0;
+        font-weight: 600;
+        border-left: 1px solid grey;
+        border-color: rgba(0, 0, 0, .2);
+
+    }
+
+    .header .login {
+        float: left;
+    }
+
+    .header .login input {
+        margin: 4px;
+        margin-top: 21.5px;
+        padding-left: 5px;
+        height: 20.2px;
+        width: 126.3px;
+        float: left;
+        font-size: 7px;
+        color: rgba(158, 154, 154, 0.7);
+    }
+
+    .header .login .username_iptChg {
+        margin: 4px;
+        margin-top: 21.5px;
+        padding-left: 5px;
+        height: 24.2px;
+        width: 129.3px;
+        float: left;
+        font-size: 7px;
+        color: black;
+        border: 0.2px solid rgb(255, 196, 199);
+        outline: none;
+    }
+
+    .header .login .pwdChg {
+        margin: 4px;
+        margin-top: 21.5px;
+        padding-left: 5px;
+        height: 24.2px;
+        width: 129.3px;
+        float: left;
+        font-size: 7px;
+        color: black;
+        border: 0.2px solid rgb(255, 196, 199);
+        outline: none;
+    }
+
+
+    .header .login a {
+        display: block;
+        margin: 21.5px 0px 0px 5.5px;
+        background-color: #0098C2;
+        width: 66.1px;
+        height: 24px;
+        display: block;
+        float: left;
+    }
+
+    .header .login a p {
+        line-height: 23px;
+        text-align: center;
+        color: rgba(236, 224, 224, 0.8);
+        font-size: 14px;
+        font-weight: 600;
+    }
+</style>
+
+<body>
+    <!-- 世纪佳缘 头部 用户名 显示隐藏内容 -->
+    <div class="header w">
+        <div class="logo">
+            <img src="images/logo.png" alt="世纪佳缘logo图">
+            <h2>婚恋网站</h2>
+        </div>
+        <div class="login">
+            <input class="username" type="text" name="username" value=" 邮箱/ID/手机号">
+            <input class="pwd" type="text" name="pwd" value=" 密码">
+            <a href="#">
+                <p>登录</p>
+            </a>
+        </div>
+
+    </div>
+    <div class="bd"></div>
+    <script>
+        // var lis_a = document.querySelector( ".loginLogo" ).querySelectorAll( 'a' )
+        // console.log( lis_a );
+
+        var ipt_username = document.querySelector( ".login" ).querySelector( '.username' );
+        console.log( ipt_username.name );
+
+        var ipt_pwd = document.querySelector( ".login" ).querySelector( '.pwd' );
+        console.log( ipt_pwd.name );
+
+        ipt_username.onfocus = function () {
+            if ( this.value == " 邮箱/ID/手机号" ) {
+                this.className = 'username username_iptChg';
+                this.value = '';
+            }
+        }
+        ipt_username.onblur = function () {
+            if ( this.value == '' ) {
+                this.value = ' 邮箱/ID/手机号';
+                this.className = 'username';
+            }
+
+        }
+        ipt_pwd.onfocus = function () {
+            if ( this.value == " 密码" ) {
+                this.className = 'pwd pwdChg';
+                this.value = '';
+                this.type = "password";
+            }
+        }
+        ipt_pwd.onblur = function () {
+            if ( this.value == '' ) {
+                this.value = ' 密码';
+                this.className = 'pwd';
+                this.type = "text";
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
